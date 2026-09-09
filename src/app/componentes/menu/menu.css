@@ -1,0 +1,21 @@
+nav {
+    margin-top: 5px;
+    height: 90px;
+    background-color: rgb(88, 96, 209);
+    border: 1px solid rgb(6, 12, 19);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+    border-radius: 5px;
+}
+
+.menu-abrir {
+    cursor: pointer;
+}
+
+#texto {
+    color: aliceblue;
+    text-decoration: none;
+}
