@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.dashboard {
+    width: 100%;
+    min-height: 100vh;
+    padding: 15px 25px 40px;
+}
+
+/* Título */
+
+.dashboard h1 {
+    text-align: center;
+    color: #245a9c;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+
+/* PARTE SUPERIOR */
+
+.veiculos {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 35px;
+
+    margin: 0 auto;
+}
+
+
+/* Seleção do veículo */
+
+.selecao {
+    width: 190px;
+}
+
+.selecao label {
+    display: block;
+
+    background-color: #eeeeee;
+
+    border: 1px solid #bcbcbc;
+
+    padding: 10px;
+
+    font-size: 14px;
+}
+
+.selecao select {
+    width: 100%;
+
+    height: 38px;
+
+    padding: 5px;
+
+    margin-top: 6px;
+
+    border: 1px solid #999999;
+
+    background-color: white;
+
+    font-size: 14px;
+}
+
+
+/* Cards de informação */
+
+.informacao {
+    display: flex;
+    gap: 25px;
+}
+
+.card-info {
+    width: 180px;
+    min-height: 85px;
+
+    border: 1px solid #bcbcbc;
+
+    background-color: #f7f7f7;
+
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card-info h2 {
+    font-size: 14px;
+    font-weight: normal;
+
+    margin-bottom: 7px;
+}
+
+.card-info span {
+    color: #1976d2;
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.card-info small {
+    font-size: 11px;
+
+    color: #777777;
+
+    margin-top: 2px;
+}
+
+
+/* IMAGEM DO CARRO */
+
+.imagem-carro {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 100px;
+    margin-bottom: 160px;
+}
+
+.imagem-carro img {
+    width: 700px;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* ÁREA DO VIN */
+
+.vin {
+    width: 100%;
+
+    margin-top: 0;
+}
+
+
+/* Campo do VIN */
+
+.vin-form {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 8px;
+}
+
+.vin-form label {
+    background-color: #245a9c;
+
+    color: white;
+
+    padding: 10px 14px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.vin-form input {
+    width: 330px;
+
+    height: 38px;
+
+    padding: 6px 8px;
+
+    border: 1px solid #999999;
+
+    font-size: 14px;
+}
+
+.vin-form button {
+    height: 38px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    background-color: #2f2fa8;
+
+    color: white;
+
+    border-radius: 4px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.vin-form button:hover {
+    background-color: #242488;
+}
+
+
+/* TABELA */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+thead {
+    background-color: #245a9c;
+
+    color: white;
+}
+
+th {
+    padding: 12px 8px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    border-right: 1px solid #d5d5d5;
+}
+
+td {
+    padding: 12px 8px;
+
+    font-size: 13px;
+
+    text-align: center;
+
+    border: 1px solid #cccccc;
+
+    height: 45px;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1000px) {
+
+    .veiculos {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .informacao {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .imagem-carro img {
+        width: 500px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .dashboard {
+        padding: 15px;
+    }
+
+    .veiculos {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 20px;
+    }
+
+    .informacao {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .card-info {
+        width: 250px;
+    }
+
+    .imagem-carro {
+        margin-top: 80px;
+
+        margin-bottom: 80px;
+    }
+
+    .imagem-carro img {
+        width: 300px;
+    }
+
+    .vin-form {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .vin-form input {
+        width: 250px;
+    }
+
+    table {
+        min-width: 700px;
+    }
+
+    .vin {
+        overflow-x: auto;
+    }
+
+}

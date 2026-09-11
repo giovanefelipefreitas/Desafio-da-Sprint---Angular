@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Usuario } from '../models/usuario.model';
 
 @Injectable({
@@ -16,7 +16,19 @@ export class Auth {
     return this.http.post<Usuario>(
       `${this.apiUrl}/login`,
       usuario
+    ).pipe(
+      tap(() => {
+        sessionStorage.setItem('logado', 'true');
+      })
     );
+  }
+
+  logout() {
+    sessionStorage.removeItem('logado');
+  }
+
+  estaAutenticado(): boolean {
+    return sessionStorage.getItem('logado') === 'true';
   }
 }
 

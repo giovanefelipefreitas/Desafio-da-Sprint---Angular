@@ -1,1 +1,158 @@
 <app-menu></app-menu>
+
+<main class="dashboard">
+
+    <h1>Dashboard FORD</h1>
+
+    <section class="veiculos">
+
+        <div class="selecao">
+
+            <label for="veiculo">Veículo</label>
+
+            <select
+                id="veiculo"
+                (change)="veiculoSelecionado($event)"
+            >
+
+                <option value="" hidden selected disabled>
+                    Escolha um modelo
+                </option>
+
+                <option
+                    *ngFor="let v of vehicles"
+                    [value]="v.id"
+                >
+                    {{ v.vehicle }}
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="informacao">
+
+            <div class="card-info">
+
+                <h2>Total de Vendas</h2>
+
+                <span>
+                    {{ selecionado?.volumetotal || 0 }}
+                </span>
+
+                <small>Und.</small>
+
+            </div>
+
+            <div class="card-info">
+
+                <h2>Conectados</h2>
+
+                <span>
+                    {{ selecionado?.connected || 0 }}
+                </span>
+
+                <small>Und.</small>
+
+            </div>
+
+            <div class="card-info">
+
+                <h2>Update Software</h2>
+
+                <span>
+                    {{ selecionado?.softwareUpdates || 0 }}
+                </span>
+
+                <small>Und.</small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="imagem-carro">
+
+        <img
+            *ngIf="selecionado"
+            [src]="selecionado.img"
+            [alt]="selecionado.vehicle"
+        >
+
+    </section>
+
+    <section class="vin">
+
+        <div class="vin-form">
+
+            <label for="codigoVin">
+                Código - Vin
+            </label>
+
+            <input
+                id="codigoVin"
+                type="text"
+                [(ngModel)]="vin"
+                placeholder="Digite o código VIN"
+            >
+
+            <button
+                type="button"
+                (click)="consultarVin()"
+            >
+                Consultar
+            </button>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Código - Vin</th>
+                    <th>Odômetro</th>
+                    <th>Nível de Combustível</th>
+                    <th>Status</th>
+                    <th>Lat.</th>
+                    <th>Long.</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr *ngIf="dadosVeiculo">
+
+                    <td>{{ vin }}</td>
+
+                    <td>
+                        {{ dadosVeiculo.odometro }} Km
+                    </td>
+
+                    <td>
+                        {{ dadosVeiculo.nivelCombustivel }} %
+                    </td>
+
+                    <td>
+                        {{ dadosVeiculo.status }}
+                    </td>
+
+                    <td>
+                        {{ dadosVeiculo.lat }}
+                    </td>
+
+                    <td>
+                        {{ dadosVeiculo.long }}
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+</main>
