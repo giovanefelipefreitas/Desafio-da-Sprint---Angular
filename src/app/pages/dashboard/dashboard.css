@@ -14,7 +14,6 @@ body {
     padding: 15px 25px 40px;
 }
 
-/* Título */
 
 .dashboard h1 {
     text-align: center;
@@ -24,7 +23,6 @@ body {
 }
 
 
-/* PARTE SUPERIOR */
 
 .veiculos {
     display: flex;
@@ -36,7 +34,6 @@ body {
 }
 
 
-/* Seleção do veículo */
 
 .selecao {
     width: 190px;
